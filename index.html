@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Switch</title>
+    <style>
+        :root {
+            --on: #fefefa;
+            --off: #1b1b1b;
+            --alphaZero: 0;
+            --alphaOne: 1;
+        }
+        * {
+            transition: 0.3s;
+        }
+        html {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: var(--on);
+            font-family: sans-serif;
+            font-size: 3rem;
+        }
+        h1 {
+            color: #1b1b1b;
+            opacity: var(--alphaOne);
+        }
+        .text {
+            color: #fefefa;
+            opacity: var(--alphaZero);
+        }
+        button {
+            margin: 10px 0;
+            padding: 5px;
+            background-color: transparent;
+            border-color: var(--off);
+            font-size: 1rem;
+            color: var(--off);
+            cursor: pointer;
+        }
+        button.pg2 {
+            margin: 100px 0 0 0;
+            padding: 5px;
+            background-color: transparent;
+            border-color: var(--off);
+            font-size: 0.5rem;
+            color: var(--off);
+            cursor: pointer;
+        }
+        button:hover, .pg2:hover {
+            background-color: var(--off);
+            color: var(--on);
+        }
+
+    </style>
+    <script>
+        let root = document.querySelector(":root");
+        const audio = new Audio("audio.ogg");
+        function switchOff() {
+            let rootStyle = getComputedStyle(root);
+            rootStyle.getPropertyValue("--on");
+            rootStyle.getPropertyValue("--off");
+            rootStyle.getPropertyValue("--alphaZero");
+            rootStyle.getPropertyValue("--alphaOne");
+            root.style.setProperty("--on", "#1b1b1b");
+            root.style.setProperty("--off", "#fefefa");
+            root.style.setProperty("--alphaZero", "1");
+            root.style.setProperty("--alphaOne", "0");
+            audio.play();
+        }
+        function switchOn() {
+            let rootStyle = getComputedStyle(root);
+            rootStyle.getPropertyValue("--on");
+            rootStyle.getPropertyValue("--off");
+            rootStyle.getPropertyValue("--alphaZero");
+            rootStyle.getPropertyValue("--alphaOne");
+            root.style.setProperty("--on", "#fefefa");
+            root.style.setProperty("--off", "#1b1b1b");
+            root.style.setProperty("--alphaZero", "0");
+            root.style.setProperty("--alphaOne", "1");
+            audio.pause();
+            audio.currentTime = 0;
+        }
+    </script>
+</head>
+<body>
+    <h1>Lights on</h1>
+    <h1 class="text" id="text">Lights off 😏</h1>
+    <div>
+        <button type="button" onclick="switchOn()">On</button>
+    </div>
+    <div>
+        <button type="button" onclick="switchOff()">Off</button>
+    </div>
+    <div>
+        <button class="pg2" type="button" onclick="window.location.href='page2.html'">Page 2 →</button>
+    </div>
+</body>
+</html>

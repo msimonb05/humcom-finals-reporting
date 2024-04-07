@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change CSS Value</title>
+    <style>
+        * {
+            transition: 0.3s;
+        }
+        html {
+            background-color: #fefefa;
+            color: #1b1b1b;
+            font-size: 3rem;
+        }
+        .undl, .itlc, .bold, .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h1 {
+            text-align: center;
+            font-family: sans-serif;
+            font-weight: normal;
+            margin: 50px 50px;
+        }
+        button {
+            margin: 50px 50px;
+            padding: 5px 20px;
+            background-color: transparent;
+            border-color: #1b1b1b;
+            font-size: 1rem;
+            color: #1b1b1b;
+            cursor: pointer;
+        }
+        button:hover, .pg2:hover {
+            background-color: #1b1b1b;
+            color: #fefefa;
+        }
+        .pg2 {
+            padding: 5px;
+            font-size: 0.5rem;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 75px 0 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="undl">
+        <h1 id="underline">Underline</h1>
+        <button type="button" onclick="document.getElementById('underline').style.textDecoration = 'underline';">Underline</button>
+    </div>
+    <div class="itlc">
+        <h1 id="italic">Italic</h1>
+        <button type="button" onclick="document.getElementById('italic').style.fontStyle = 'italic';">Italicize</button>
+    </div>
+    <div class="bold">
+        <h1 id="bold">Bold</h1>
+        <button type="button" onclick="document.getElementById('bold').style.fontWeight = 'bold'; document.getElementById('bold').innerHTML = 'Bold 👀';">Bolden</button>
+    </div>
+    <div class="container">
+        <button class="pg2" type="button" onclick="window.location.href='page2.html'">← Page 2</button>
+    </div>
+</body>
+</html>
