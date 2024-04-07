@@ -9,4 +9,4 @@ Group 1<br>
 IAA1<br><br>
 This repository is only for the reporting on the introduction to JavaScript for HUMCOM1.
 <br>
-Link Here: []()
+Link Here: [https://msimonb05.github.io/humcom-finals-reporting/](https://msimonb05.github.io/humcom-finals-reporting/)
